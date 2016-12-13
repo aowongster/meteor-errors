@@ -13,7 +13,8 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3');
   // api.use('ecmascript');
-  api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
+
+  api.use(['minimongo', 'mongo-livedata', 'templating@1.2.15'], 'client');
   api.addFiles(['errors.js', 'errors_list.html', 'errors_list.js'], 'client');
   // api.mainModule('errors.js');
   if (api.export) 
