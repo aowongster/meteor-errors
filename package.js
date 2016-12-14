@@ -17,13 +17,14 @@ Package.onUse(function(api) {
   api.use(['minimongo', 'mongo-livedata', 'templating@1.2.15'], 'client');
   api.addFiles(['errors.js', 'errors_list.html', 'errors_list.js'], 'client');
   // api.mainModule('errors.js');
-  if (api.export) 
+  if (api.export)
     api.export('Errors');
 });
 
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('aowongster:errors');
-  api.mainModule('errors-tests.js');
+  api.use('aowongster:errors', client);
+  api.use(['templating@1.2.15', 'tinytest', 'test-helpers'], 'client');
+  api.mainModule('errors_tests.js');
 });
