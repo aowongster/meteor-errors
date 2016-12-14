@@ -1,6 +1,6 @@
 Package.describe({
   name: 'aowongster:errors',
-  version: '1.0.2',
+  version: '1.0.3',
   // Brief, one-line summary of the package.
   summary: 'A pattern to display application errors to the user',
   // URL to the Git repository containing the source code for this package.
@@ -12,13 +12,12 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3');
-  // api.use('ecmascript');
+  api.use('ecmascript');
 
   api.use(['minimongo', 'mongo-livedata', 'templating@1.2.15'], 'client');
   api.addFiles(['errors.js', 'errors_list.html', 'errors_list.js'], 'client');
-  // api.mainModule('errors.js');
-  if (api.export)
-    api.export('Errors');
+  api.mainModule('errors.js');
+  api.export('Errors');
 });
 
 Package.onTest(function(api) {
@@ -26,5 +25,5 @@ Package.onTest(function(api) {
   api.use('tinytest');
   api.use('aowongster:errors', 'client');
   api.use(['templating@1.2.15', 'tinytest', 'test-helpers'], 'client');
-  api.mainModule('errors_tests.js');
+  api.mainModule('errors_tests.js', 'client');
 });
