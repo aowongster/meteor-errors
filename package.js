@@ -1,6 +1,6 @@
 Package.describe({
   name: 'aowongster:errors',
-  version: '1.0.1',
+  version: '1.0.2',
   // Brief, one-line summary of the package.
   summary: 'A pattern to display application errors to the user',
   // URL to the Git repository containing the source code for this package.
@@ -24,7 +24,7 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('aowongster:errors', client);
+  api.use('aowongster:errors', 'client');
   api.use(['templating@1.2.15', 'tinytest', 'test-helpers'], 'client');
   api.mainModule('errors_tests.js');
 });
