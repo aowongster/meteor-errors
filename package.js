@@ -15,6 +15,7 @@ Package.onUse(function(api) {
   api.use('ecmascript');
 
   api.use(['minimongo', 'mongo-livedata', 'templating@1.2.15'], 'client');
+  api.use('mongo', ['client']);
   api.addFiles(['errors.js', 'errors_list.html', 'errors_list.js'], 'client');
   api.mainModule('errors.js');
   api.export('Errors');
