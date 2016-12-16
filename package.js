@@ -1,6 +1,6 @@
 Package.describe({
   name: 'aowongster:errors',
-  version: '1.0.3',
+  version: '1.0.6',
   // Brief, one-line summary of the package.
   summary: 'A pattern to display application errors to the user',
   // URL to the Git repository containing the source code for this package.
@@ -14,8 +14,9 @@ Package.onUse(function(api) {
   api.versionsFrom('1.4.2.3');
   api.use('ecmascript');
 
-  api.use(['minimongo', 'mongo-livedata', 'templating@1.2.15'], 'client');
-  api.use('mongo', ['client']);
+  // need to add mongo when you want to ship to production FYI
+  // need to add templating version for some reason
+  api.use(['mongo', 'minimongo', 'mongo-livedata', 'templating@1.2.15'], 'client');
   api.addFiles(['errors.js', 'errors_list.html', 'errors_list.js'], 'client');
   api.mainModule('errors.js');
   api.export('Errors');
